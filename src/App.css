@@ -1,0 +1,123 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Montserrat", Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.title {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.card {
+  background: #222;
+  border-radius: 12px;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.version,
+.updated {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  background: #c44;
+  border-radius: 50%;
+}
+
+.timer {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.num {
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+}
+
+.scam {
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+}
+
+.percent {
+  color: #c44;
+  font-weight: bold;
+}
+
+.info {
+  margin-left: 6px;
+  background: #333;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.copy-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.copy-btn:hover {
+  background: #444;
+}
