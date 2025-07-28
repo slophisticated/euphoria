@@ -11,7 +11,7 @@ function App() {
   });
   const [probability, setProbability] = useState(0);
 
-  const START_DATE = new Date("2025-07-18T22:54:00+07:00");
+  const START_DATE = new Date("2025-07-28T21:11:00+07:00");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,9 +30,6 @@ function App() {
         100,
         parseFloat(((totalHours / maxHours) * 100).toFixed(2))
       );
-
-      console.log("⏱ Hours since down:", totalHours);
-      console.log("📈 Exit scam probability:", prob, "%");
 
       setTimer({ days, hours, minutes, seconds });
       setProbability(prob);
@@ -74,9 +71,7 @@ function App() {
           height={80}
           style={{ width: 50, height: 50, borderRadius: 15 }}
         />
-        <span style={{ margin: "0 10px", fontSize: 14 }}>
-          Downtime Detector
-        </span>
+        <span style={{ margin: "0 10px", fontSize: 14 }}>Runtime Detector</span>
       </div>
 
       {/* Main */}
@@ -91,7 +86,7 @@ function App() {
         }}
       >
         <h1 style={{ fontSize: 28, marginBottom: 10, textAlign: "center" }}>
-          Euphoria has been down since
+          LETSGOOOO WE ARE SO BACK
         </h1>
 
         {/* Status Card */}
@@ -151,7 +146,7 @@ function App() {
                   textOverflow: "ellipsis",
                 }}
               >
-                Last Updated: 07/21/2025 at 23:12 PM GMT+7
+                Last Updated: 07/28/2025 at 21:11 PM GMT+7
               </div>
             </div>
           </div>
@@ -160,7 +155,7 @@ function App() {
               width: 12,
               height: 12,
               borderRadius: "50%",
-              backgroundColor: "#FF6961",
+              backgroundColor: "#44db4bff",
               animation: "pulseDot 2s infinite",
               marginLeft: 10,
             }}
@@ -250,7 +245,7 @@ function App() {
             }}
           >
             <span style={{ color: "rgb(161, 161, 170)", fontWeight: 500 }}>
-              Exit Scam Probability: {probability}%
+              Exit Scam Probability: NOO WAYY :P
             </span>
           </div>
 
@@ -275,11 +270,11 @@ function App() {
               }}
               onClick={() => {
                 navigator.clipboard.writeText(
-                  `EUPHORIA has been down for: ${timer.days}d ${timer.hours}h ${timer.minutes}m ${timer.seconds}s`
+                  `EUPHORIA has been running for: ${timer.days}d ${timer.hours}h ${timer.minutes}m ${timer.seconds}s`
                 );
               }}
             >
-              Copy Downtime
+              Copy Runtime
             </button>
           </div>
         </div>
