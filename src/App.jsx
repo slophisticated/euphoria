@@ -2,38 +2,24 @@ import React, { useState, useEffect } from "react";
 import eupk from "./assets/eupk.png";
 import "./App.css";
 
-function App() {
-  const [timer, setTimer] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-  const [probability, setProbability] = useState(0);
+const START_DATE = new Date("2025-07-28T21:11:00+07:00");
 
-  const START_DATE = new Date("2025-07-28T21:11:00+07:00");
+function getElapsedTime() {
+  const totalSeconds = Math.max(0, Math.floor((Date.now() - START_DATE.getTime()) / 1000));
+
+  return {
+    days: Math.floor(totalSeconds / 86400),
+    hours: Math.floor(totalSeconds / 3600) % 24,
+    minutes: Math.floor(totalSeconds / 60) % 60,
+    seconds: totalSeconds % 60,
+  };
+}
+
+function App() {
+  const [timer, setTimer] = useState(getElapsedTime);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const now = new Date();
-      const diffInMs = now - START_DATE;
-
-      const totalSeconds = Math.floor(diffInMs / 1000);
-      const days = Math.floor(totalSeconds / 86400);
-      const hours = Math.floor(totalSeconds / 3600) % 24;
-      const minutes = Math.floor(totalSeconds / 60) % 60;
-      const seconds = totalSeconds % 60;
-
-      const maxHours = 60 * 24;
-      const totalHours = Math.floor(diffInMs / (1000 * 60 * 60));
-      const prob = Math.min(
-        100,
-        parseFloat(((totalHours / maxHours) * 100).toFixed(2))
-      );
-
-      setTimer({ days, hours, minutes, seconds });
-      setProbability(prob);
-    }, 1000);
+    const interval = setInterval(() => setTimer(getElapsedTime()), 1000);
 
     return () => clearInterval(interval);
   }, []);
